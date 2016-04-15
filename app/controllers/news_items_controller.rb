@@ -7,6 +7,10 @@ class NewsItemsController < ApplicationController
     @news_items = NewsItem.all
   end
 
+  def news_item_params
+  params.require(:news_item).permit(:title, :sub_header, :content, :image)
+end
+
   # GET /news_items/1
   # GET /news_items/1.json
   def show
